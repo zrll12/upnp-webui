@@ -7,7 +7,7 @@ const updated = computed(() => new Date(props.route.updatedAt).toLocaleString())
 </script>
 
 <template>
-<n-card :title="titleStr" class="w-80">
+<n-card :title="titleStr" class="w-80" hoverable>
   <div class="flex flex-col gap-2">
     <n-text>{{ props.route.name }}</n-text>
     <n-text class="text-gray-500">ID: {{ props.route.id }}</n-text>

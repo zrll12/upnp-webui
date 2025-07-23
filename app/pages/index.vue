@@ -58,10 +58,13 @@ const submitNewRoute = () => {
     </n-grid-item>
 
     <n-grid-item>
-      <n-card @click="openCreateModel" class="flex cursor-pointer h-full items-center justify-center">
-        <n-icon size="40">
-          <Add12Filled/>
-        </n-icon>
+      <n-card @click="openCreateModel" class="cursor-pointer h-full" hoverable>
+        <div class="flex flex-col items-center justify-center h-full">
+          <n-icon size="40">
+            <Add12Filled/>
+          </n-icon>
+          <n-text class="text-xl">申请新路由</n-text>
+        </div>
       </n-card>
     </n-grid-item>
   </n-grid>

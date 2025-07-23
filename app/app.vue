@@ -37,5 +37,4 @@ const themeOverrides: GlobalThemeOverrides = {
     borderRadius: "5px"
   }
 }
-
 </script>
