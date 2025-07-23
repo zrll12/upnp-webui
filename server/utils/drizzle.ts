@@ -9,3 +9,4 @@ export function useDrizzle() {
 
 export type Routes = typeof schema.routes.$inferSelect
 export type Users = typeof schema.users.$inferSelect
+export type Applications = typeof schema.applications.$inferSelect

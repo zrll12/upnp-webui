@@ -24,6 +24,13 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.1.2",
+		"@vicons/antd": "^0.13.0",
+		"@vicons/carbon": "^0.13.0",
+		"@vicons/fluent": "^0.13.0",
+		"@vicons/ionicons4": "^0.13.0",
+		"@vicons/ionicons5": "^0.13.0",
+		"@vicons/material": "^0.13.0",
+		"@vicons/tabler": "^0.13.0",
 		"drizzle-kit": "^0.31.4",
 		"naive-ui": "^2.42.0",
 		"vfonts": "^0.0.3",
