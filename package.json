@@ -7,9 +7,12 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
+		"postinstall": "nuxt prepare",
+		"db:generate": "drizzle-kit generate"
 	},
 	"dependencies": {
+		"@nuxthub/core": "0.9.0",
+		"drizzle-orm": "^0.44.3",
 		"nuxt": "^4.0.1",
 		"nuxtjs-naive-ui": "1.0.2",
 		"unplugin-auto-import": "^19.3.0",
@@ -19,7 +22,9 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.1.2",
+		"drizzle-kit": "^0.31.4",
 		"naive-ui": "^2.42.0",
-		"vfonts": "^0.0.3"
+		"vfonts": "^0.0.3",
+		"wrangler": "^4.25.1"
 	}
 }
