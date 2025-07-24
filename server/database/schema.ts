@@ -13,6 +13,7 @@ export const users = sqliteTable('users', {
   id: integer('id').primaryKey({autoIncrement: true}),
   username: text('username').notNull().unique(),
   password: text('password').notNull(),
+  token: text('token'),
   createdAt: integer('createdAt', {mode: "timestamp"}).notNull().$default(() => new Date()),
   updatedAt: integer('updatedAt', {mode: "timestamp"}).notNull().$onUpdate(() => new Date()),
 })
