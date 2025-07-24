@@ -8,36 +8,36 @@ const { userInfo, login: userLogin, logout } = useUserFrontend();
 
 const loginFormRef = ref<InstanceType<typeof import("naive-ui").NForm>>();
 const loginForm = ref({
-	username: "",
-	password: "",
+  username: "",
+  password: "",
 });
 
 // 处理登录
 const handleLogin = async () => {
-	if (loginForm.value.username === "" || loginForm.value.password === "") {
-		message.error("用户名和密码不能为空");
-		return;
-	}
+  if (loginForm.value.username === "" || loginForm.value.password === "") {
+    message.error("用户名和密码不能为空");
+    return;
+  }
 
-	try {
-		await userLogin(loginForm.value);
-		showModal.value = false;
-	} finally {
-		loginForm.value.username = "";
-		loginForm.value.password = "";
-	}
+  try {
+    await userLogin(loginForm.value);
+    showModal.value = false;
+  } finally {
+    loginForm.value.username = "";
+    loginForm.value.password = "";
+  }
 };
 
 const userMenuOptions = [
-	{
-		label: "登出",
-		key: "logout",
-	},
+  {
+    label: "登出",
+    key: "logout",
+  },
 ];
 const handleSelect = (key: string) => {
-	if (key === "logout") {
-		logout();
-	}
+  if (key === "logout") {
+    logout();
+  }
 };
 </script>
 

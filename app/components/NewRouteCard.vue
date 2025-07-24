@@ -1,46 +1,46 @@
 <script setup lang="ts">
-import { useMessage } from "naive-ui";
 import { Add12Filled } from "@vicons/fluent";
+import { useMessage } from "naive-ui";
 
 const message = useMessage();
 const showCreateModel = ref(false);
 const newRouteFormRef = ref<InstanceType<typeof import("naive-ui").NForm>>();
 const newRouteForm = ref({
-	name: "",
-	innerPort: 1000,
-	outerPort: 1000,
-	contact: "",
-	description: "",
+  name: "",
+  innerPort: 1000,
+  outerPort: 1000,
+  contact: "",
+  description: "",
 });
 
 const submitNewRoute = () => {
-	if (!newRouteForm.value.name || !newRouteForm.value.contact) {
-		message.error("请填写所有必填项");
-		return;
-	}
-	if (
-		newRouteForm.value.innerPort < 1000 ||
-		newRouteForm.value.innerPort > 65535 ||
-		newRouteForm.value.outerPort < 1000 ||
-		newRouteForm.value.outerPort > 65535
-	) {
-		message.error("端口必须在1000到65535之间");
-		return;
-	}
+  if (!newRouteForm.value.name || !newRouteForm.value.contact) {
+    message.error("请填写所有必填项");
+    return;
+  }
+  if (
+    newRouteForm.value.innerPort < 1000 ||
+    newRouteForm.value.innerPort > 65535 ||
+    newRouteForm.value.outerPort < 1000 ||
+    newRouteForm.value.outerPort > 65535
+  ) {
+    message.error("端口必须在1000到65535之间");
+    return;
+  }
 
-	$fetch("/api/application", { method: "POST", body: newRouteForm.value }).then(
-		(response) => {
-			message.success("提交成功，我们将在1周内与您联系，请勿重复提交。");
-			showCreateModel.value = false;
-			newRouteForm.value = {
-				name: "",
-				innerPort: 1000,
-				outerPort: 1000,
-				contact: "",
-				description: "",
-			};
-		},
-	);
+  $fetch("/api/application", { method: "POST", body: newRouteForm.value }).then(
+    () => {
+      message.success("提交成功，我们将在1周内与您联系，请勿重复提交。");
+      showCreateModel.value = false;
+      newRouteForm.value = {
+        name: "",
+        innerPort: 1000,
+        outerPort: 1000,
+        contact: "",
+        description: "",
+      };
+    },
+  );
 };
 </script>
 

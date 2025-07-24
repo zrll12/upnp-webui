@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import type { GlobalThemeOverrides } from "naive-ui";
+
+const themeOverrides: GlobalThemeOverrides = {
+  common: {
+    borderRadius: "10px",
+    borderRadiusSmall: "8px",
+  },
+  Checkbox: {
+    borderRadius: "5px",
+  },
+};
+</script>
+
 <template>
   <n-config-provider :theme-overrides="themeOverrides">
     <n-message-provider>
@@ -30,17 +44,3 @@
     </n-message-provider>
   </n-config-provider>
 </template>
-
-<script setup lang="ts">
-import type { GlobalThemeOverrides } from "naive-ui";
-
-const themeOverrides: GlobalThemeOverrides = {
-	common: {
-		borderRadius: "10px",
-		borderRadiusSmall: "8px",
-	},
-	Checkbox: {
-		borderRadius: "5px",
-	},
-};
-</script>
