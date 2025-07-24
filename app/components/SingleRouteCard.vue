@@ -4,6 +4,7 @@ const props = defineProps<{ route: Routes }>()
 const titleStr = `${props.route.outerPort}:${props.route.innerPort}`
 const created = computed(() => new Date(props.route.createdAt).toLocaleString())
 const updated = computed(() => new Date(props.route.updatedAt).toLocaleString())
+// TODO: Time format on backend to fix hydration issues
 </script>
 
 <template>

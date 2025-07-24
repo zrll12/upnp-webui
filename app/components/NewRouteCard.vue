@@ -3,9 +3,7 @@ import {useMessage} from "naive-ui";
 import {Add12Filled} from "@vicons/fluent";
 
 const message = useMessage()
-
 const showCreateModel = ref(false);
-
 const newRouteFormRef = ref<InstanceType<typeof import('naive-ui').NForm>>();
 const newRouteForm = ref({
   name: '',

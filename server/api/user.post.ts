@@ -10,13 +10,19 @@ export default eventHandler(async (event) => {
     .where(eq(tables.users.username, username))
     .limit(1);
   if (users.length === 0) {
-    throw new Error("User not found");
+    throw createError({
+      statusCode: 4011,
+      statusMessage: "User not found",
+    });
   }
 
   const passwordInDb = users[0].password;
   if (passwordInDb.endsWith('$')) { // Not hashed
     if (passwordInDb.substring(0, passwordInDb.length - 1) !== password) {
-      throw new Error("Invalid password");
+      throw createError({
+        statusCode: 4012,
+        statusMessage: "Invalid password",
+      });
     }
 
     // Password updated, so old token should be invalidated
@@ -26,12 +32,15 @@ export default eventHandler(async (event) => {
       .update(tables.users)
       .set({token, password: hashed})
       .where(eq(tables.users.username, username))
-    return {token};
+    return {token, username: username};
   }
 
   // Hashed password
   if (!bcrypt.compareSync(password, passwordInDb)) {
-    throw new Error("Invalid password");
+    throw createError({
+      statusCode: 4012,
+      statusMessage: "Invalid password",
+    });
   }
 
   // Generate token
