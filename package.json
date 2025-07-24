@@ -8,7 +8,9 @@
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
-		"db:generate": "drizzle-kit generate"
+		"db:generate": "drizzle-kit generate",
+		"lint:weite": "biome format --write",
+		"lint:check": "biome check"
 	},
 	"dependencies": {
 		"@nuxthub/core": "0.9.0",

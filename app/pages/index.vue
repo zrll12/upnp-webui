@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {Add12Filled} from '@vicons/fluent';
-import {useMessage} from "naive-ui";
+import { Add12Filled } from "@vicons/fluent";
+import { useMessage } from "naive-ui";
 import NewRouteCard from "~/components/NewRouteCard.vue";
 
-const routes = await useAsyncData('routes', () => $fetch('/api/route'))
+const routes = await useAsyncData("routes", () => $fetch("/api/route"));
 </script>
 
 <template>

@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import type { NuxtError } from '#app'
+import type { NuxtError } from "#app";
 
-import type {GlobalThemeOverrides} from "naive-ui";
+import type { GlobalThemeOverrides } from "naive-ui";
 
 const themeOverrides: GlobalThemeOverrides = {
-  common: {
-    borderRadius: "10px",
-    borderRadiusSmall: "8px"
-  },
-  Checkbox: {
-    borderRadius: "5px"
-  }
-}
+	common: {
+		borderRadius: "10px",
+		borderRadiusSmall: "8px",
+	},
+	Checkbox: {
+		borderRadius: "5px",
+	},
+};
 
 const props = defineProps({
-  error: Object as () => NuxtError
-})
+	error: Object as () => NuxtError,
+});
 
-const handleError = () => clearError({ redirect: '/' })
+const handleError = () => clearError({ redirect: "/" });
 </script>
 
 <template>

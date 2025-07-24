@@ -32,15 +32,15 @@
 </template>
 
 <script setup lang="ts">
-import type {GlobalThemeOverrides} from "naive-ui";
+import type { GlobalThemeOverrides } from "naive-ui";
 
 const themeOverrides: GlobalThemeOverrides = {
-  common: {
-    borderRadius: "10px",
-    borderRadiusSmall: "8px"
-  },
-  Checkbox: {
-    borderRadius: "5px"
-  }
-}
+	common: {
+		borderRadius: "10px",
+		borderRadiusSmall: "8px",
+	},
+	Checkbox: {
+		borderRadius: "5px",
+	},
+};
 </script>
