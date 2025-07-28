@@ -12,7 +12,6 @@ const loginForm = ref({
   password: "",
 });
 
-// 处理登录
 const handleLogin = async () => {
   if (loginForm.value.username === "" || loginForm.value.password === "") {
     message.error("用户名和密码不能为空");
